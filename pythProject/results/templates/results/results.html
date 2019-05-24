@@ -1,0 +1,6 @@
+{% extends "testForm/wrapper.html" %} {% block content%} 
+<h5>Результаты:</h5>
+{%for result in object_list %} 
+{{result.data}}
+<br> {% endfor%}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "testForm/wrapper.html" %} {% block content%}
+
+<form class="form-horizontal  " method="Post" action="">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success">Save</button>
+    <span class="input-group-btn"><button class="btn btn-success add">Add</button></span>
+    <br>
+    <br> {{ formset.management_form }} {% for form in formset %}
+    <div class="row form-row">
+        <div class="col-sm-2">
+            <label>field</label>
+        </div>
+        <div class="col-sm-4">
+            <div class="input-group">
+                {{form.text}}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</form>
+
+{% endblock %}
